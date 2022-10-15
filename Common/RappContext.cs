@@ -29,11 +29,11 @@ namespace Common
             result.Attributes.AddRange(Target.Attributes);
             if (Post != null)
             {
-                result.Attributes.AddRange(Post.Attributes.Where(a => result.Attributes.Contains(a.Key)));
+                result.Attributes.AddRange(Post.Attributes.Where(a => !result.Attributes.Contains(a.Key)));
             }
             if (Pre != null)
             {
-                result.Attributes.AddRange(Pre.Attributes.Where(a => result.Attributes.Contains(a.Key)));
+                result.Attributes.AddRange(Pre.Attributes.Where(a => !result.Attributes.Contains(a.Key)));
             }
             return result;
         }
